@@ -1,0 +1,748 @@
+[2026/05/16 12:47:43] ppocr INFO: Architecture : 
+[2026/05/16 12:47:43] ppocr INFO:     Backbone : 
+[2026/05/16 12:47:43] ppocr INFO:         det : True
+[2026/05/16 12:47:43] ppocr INFO:         name : PPLCNetV3
+[2026/05/16 12:47:43] ppocr INFO:         scale : 0.75
+[2026/05/16 12:47:43] ppocr INFO:     Head : 
+[2026/05/16 12:47:43] ppocr INFO:         fix_nan : True
+[2026/05/16 12:47:43] ppocr INFO:         k : 50
+[2026/05/16 12:47:43] ppocr INFO:         name : DBHead
+[2026/05/16 12:47:43] ppocr INFO:     Neck : 
+[2026/05/16 12:47:43] ppocr INFO:         name : RSEFPN
+[2026/05/16 12:47:43] ppocr INFO:         out_channels : 96
+[2026/05/16 12:47:43] ppocr INFO:         shortcut : True
+[2026/05/16 12:47:43] ppocr INFO:     Transform : None
+[2026/05/16 12:47:43] ppocr INFO:     algorithm : DB
+[2026/05/16 12:47:43] ppocr INFO:     model_type : det
+[2026/05/16 12:47:43] ppocr INFO: Eval : 
+[2026/05/16 12:47:43] ppocr INFO:     dataset : 
+[2026/05/16 12:47:43] ppocr INFO:         data_dir : ./data/val/
+[2026/05/16 12:47:43] ppocr INFO:         label_file_list : ['./data/val/label.txt']
+[2026/05/16 12:47:43] ppocr INFO:         name : SimpleDataSet
+[2026/05/16 12:47:43] ppocr INFO:         transforms : 
+[2026/05/16 12:47:43] ppocr INFO:             DecodeImage : 
+[2026/05/16 12:47:43] ppocr INFO:                 channel_first : False
+[2026/05/16 12:47:43] ppocr INFO:                 img_mode : BGR
+[2026/05/16 12:47:43] ppocr INFO:             DetLabelEncode : None
+[2026/05/16 12:47:43] ppocr INFO:             DetResizeForTest : None
+[2026/05/16 12:47:43] ppocr INFO:             NormalizeImage : 
+[2026/05/16 12:47:43] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/16 12:47:43] ppocr INFO:                 order : hwc
+[2026/05/16 12:47:43] ppocr INFO:                 scale : 1./255.
+[2026/05/16 12:47:43] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/16 12:47:43] ppocr INFO:             ToCHWImage : None
+[2026/05/16 12:47:43] ppocr INFO:             KeepKeys : 
+[2026/05/16 12:47:43] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2026/05/16 12:47:43] ppocr INFO:     loader : 
+[2026/05/16 12:47:43] ppocr INFO:         batch_size_per_card : 1
+[2026/05/16 12:47:43] ppocr INFO:         drop_last : False
+[2026/05/16 12:47:43] ppocr INFO:         num_workers : 2
+[2026/05/16 12:47:43] ppocr INFO:         shuffle : False
+[2026/05/16 12:47:43] ppocr INFO: Global : 
+[2026/05/16 12:47:43] ppocr INFO:     cal_metric_during_train : False
+[2026/05/16 12:47:43] ppocr INFO:     checkpoints : None
+[2026/05/16 12:47:43] ppocr INFO:     d2s_train_image_shape : [3, 640, 640]
+[2026/05/16 12:47:43] ppocr INFO:     debug : False
+[2026/05/16 12:47:43] ppocr INFO:     distributed : False
+[2026/05/16 12:47:43] ppocr INFO:     epoch_num : 50
+[2026/05/16 12:47:43] ppocr INFO:     eval_batch_step : [0, 1500]
+[2026/05/16 12:47:43] ppocr INFO:     infer_img : doc/imgs_en/img_10.jpg
+[2026/05/16 12:47:43] ppocr INFO:     log_smooth_window : 20
+[2026/05/16 12:47:43] ppocr INFO:     model_name : PP-OCRv4_mobile_det
+[2026/05/16 12:47:43] ppocr INFO:     pretrained_model : https://paddleocr.bj.bcebos.com/pretrained/PPLCNetV3_x0_75_ocr_det.pdparams
+[2026/05/16 12:47:43] ppocr INFO:     print_batch_step : 100
+[2026/05/16 12:47:43] ppocr INFO:     save_epoch_step : 10
+[2026/05/16 12:47:43] ppocr INFO:     save_inference_dir : None
+[2026/05/16 12:47:43] ppocr INFO:     save_model_dir : ./output/PP-OCRv4_mobile_det
+[2026/05/16 12:47:43] ppocr INFO:     save_res_path : ./checkpoints/det_db/predicts_db.txt
+[2026/05/16 12:47:43] ppocr INFO:     use_gpu : True
+[2026/05/16 12:47:43] ppocr INFO:     use_visualdl : False
+[2026/05/16 12:47:43] ppocr INFO: Loss : 
+[2026/05/16 12:47:43] ppocr INFO:     alpha : 5
+[2026/05/16 12:47:43] ppocr INFO:     balance_loss : True
+[2026/05/16 12:47:43] ppocr INFO:     beta : 10
+[2026/05/16 12:47:43] ppocr INFO:     main_loss_type : DiceLoss
+[2026/05/16 12:47:43] ppocr INFO:     name : DBLoss
+[2026/05/16 12:47:43] ppocr INFO:     ohem_ratio : 3
+[2026/05/16 12:47:43] ppocr INFO: Metric : 
+[2026/05/16 12:47:43] ppocr INFO:     main_indicator : hmean
+[2026/05/16 12:47:43] ppocr INFO:     name : DetMetric
+[2026/05/16 12:47:43] ppocr INFO: Optimizer : 
+[2026/05/16 12:47:43] ppocr INFO:     beta1 : 0.9
+[2026/05/16 12:47:43] ppocr INFO:     beta2 : 0.999
+[2026/05/16 12:47:43] ppocr INFO:     lr : 
+[2026/05/16 12:47:43] ppocr INFO:         learning_rate : 0.001
+[2026/05/16 12:47:43] ppocr INFO:         name : Cosine
+[2026/05/16 12:47:43] ppocr INFO:         warmup_epoch : 2
+[2026/05/16 12:47:43] ppocr INFO:     name : Adam
+[2026/05/16 12:47:43] ppocr INFO:     regularizer : 
+[2026/05/16 12:47:43] ppocr INFO:         factor : 5e-05
+[2026/05/16 12:47:43] ppocr INFO:         name : L2
+[2026/05/16 12:47:43] ppocr INFO: PostProcess : 
+[2026/05/16 12:47:43] ppocr INFO:     box_thresh : 0.6
+[2026/05/16 12:47:43] ppocr INFO:     max_candidates : 1000
+[2026/05/16 12:47:43] ppocr INFO:     name : DBPostProcess
+[2026/05/16 12:47:43] ppocr INFO:     thresh : 0.3
+[2026/05/16 12:47:43] ppocr INFO:     unclip_ratio : 1.5
+[2026/05/16 12:47:43] ppocr INFO: Train : 
+[2026/05/16 12:47:43] ppocr INFO:     dataset : 
+[2026/05/16 12:47:43] ppocr INFO:         data_dir : ./data/train/
+[2026/05/16 12:47:43] ppocr INFO:         label_file_list : ['./data/train/label.txt']
+[2026/05/16 12:47:43] ppocr INFO:         name : SimpleDataSet
+[2026/05/16 12:47:43] ppocr INFO:         ratio_list : [1.0]
+[2026/05/16 12:47:43] ppocr INFO:         transforms : 
+[2026/05/16 12:47:43] ppocr INFO:             DecodeImage : 
+[2026/05/16 12:47:43] ppocr INFO:                 channel_first : False
+[2026/05/16 12:47:43] ppocr INFO:                 img_mode : BGR
+[2026/05/16 12:47:43] ppocr INFO:             DetLabelEncode : None
+[2026/05/16 12:47:43] ppocr INFO:             CopyPaste : None
+[2026/05/16 12:47:43] ppocr INFO:             IaaAugment : 
+[2026/05/16 12:47:43] ppocr INFO:                 augmenter_args : 
+[2026/05/16 12:47:43] ppocr INFO:                     args : 
+[2026/05/16 12:47:43] ppocr INFO:                         p : 0.5
+[2026/05/16 12:47:43] ppocr INFO:                     type : Fliplr
+[2026/05/16 12:47:43] ppocr INFO:                     args : 
+[2026/05/16 12:47:43] ppocr INFO:                         rotate : [-10, 10]
+[2026/05/16 12:47:43] ppocr INFO:                     type : Affine
+[2026/05/16 12:47:43] ppocr INFO:                     args : 
+[2026/05/16 12:47:43] ppocr INFO:                         size : [0.5, 3]
+[2026/05/16 12:47:43] ppocr INFO:                     type : Resize
+[2026/05/16 12:47:43] ppocr INFO:             EastRandomCropData : 
+[2026/05/16 12:47:43] ppocr INFO:                 keep_ratio : True
+[2026/05/16 12:47:43] ppocr INFO:                 max_tries : 50
+[2026/05/16 12:47:43] ppocr INFO:                 size : [640, 640]
+[2026/05/16 12:47:43] ppocr INFO:             MakeBorderMap : 
+[2026/05/16 12:47:43] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/16 12:47:43] ppocr INFO:                 thresh_max : 0.7
+[2026/05/16 12:47:43] ppocr INFO:                 thresh_min : 0.3
+[2026/05/16 12:47:43] ppocr INFO:                 total_epoch : 50
+[2026/05/16 12:47:43] ppocr INFO:             MakeShrinkMap : 
+[2026/05/16 12:47:43] ppocr INFO:                 min_text_size : 8
+[2026/05/16 12:47:43] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/16 12:47:43] ppocr INFO:                 total_epoch : 50
+[2026/05/16 12:47:43] ppocr INFO:             NormalizeImage : 
+[2026/05/16 12:47:43] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/16 12:47:43] ppocr INFO:                 order : hwc
+[2026/05/16 12:47:43] ppocr INFO:                 scale : 1./255.
+[2026/05/16 12:47:43] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/16 12:47:43] ppocr INFO:             ToCHWImage : None
+[2026/05/16 12:47:43] ppocr INFO:             KeepKeys : 
+[2026/05/16 12:47:43] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2026/05/16 12:47:43] ppocr INFO:     loader : 
+[2026/05/16 12:47:43] ppocr INFO:         batch_size_per_card : 8
+[2026/05/16 12:47:43] ppocr INFO:         drop_last : False
+[2026/05/16 12:47:43] ppocr INFO:         num_workers : 8
+[2026/05/16 12:47:43] ppocr INFO:         shuffle : True
+[2026/05/16 12:47:43] ppocr INFO: profiler_options : None
+[2026/05/16 12:47:43] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2026/05/16 12:47:43] ppocr INFO: Initialize indexes of datasets:['./data/train/label.txt']
+[2026/05/16 12:47:43] ppocr INFO: Initialize indexes of datasets:['./data/val/label.txt']
+[2026/05/16 12:50:21] ppocr INFO: Architecture : 
+[2026/05/16 12:50:21] ppocr INFO:     Backbone : 
+[2026/05/16 12:50:21] ppocr INFO:         det : True
+[2026/05/16 12:50:21] ppocr INFO:         name : PPLCNetV3
+[2026/05/16 12:50:21] ppocr INFO:         scale : 0.75
+[2026/05/16 12:50:21] ppocr INFO:     Head : 
+[2026/05/16 12:50:21] ppocr INFO:         fix_nan : True
+[2026/05/16 12:50:21] ppocr INFO:         k : 50
+[2026/05/16 12:50:21] ppocr INFO:         name : DBHead
+[2026/05/16 12:50:21] ppocr INFO:     Neck : 
+[2026/05/16 12:50:21] ppocr INFO:         name : RSEFPN
+[2026/05/16 12:50:21] ppocr INFO:         out_channels : 96
+[2026/05/16 12:50:21] ppocr INFO:         shortcut : True
+[2026/05/16 12:50:21] ppocr INFO:     Transform : None
+[2026/05/16 12:50:21] ppocr INFO:     algorithm : DB
+[2026/05/16 12:50:21] ppocr INFO:     model_type : det
+[2026/05/16 12:50:21] ppocr INFO: Eval : 
+[2026/05/16 12:50:21] ppocr INFO:     dataset : 
+[2026/05/16 12:50:21] ppocr INFO:         data_dir : ./data/val/
+[2026/05/16 12:50:21] ppocr INFO:         label_file_list : ['./data/val/label.txt']
+[2026/05/16 12:50:21] ppocr INFO:         name : SimpleDataSet
+[2026/05/16 12:50:21] ppocr INFO:         transforms : 
+[2026/05/16 12:50:21] ppocr INFO:             DecodeImage : 
+[2026/05/16 12:50:21] ppocr INFO:                 channel_first : False
+[2026/05/16 12:50:21] ppocr INFO:                 img_mode : BGR
+[2026/05/16 12:50:21] ppocr INFO:             DetLabelEncode : None
+[2026/05/16 12:50:21] ppocr INFO:             DetResizeForTest : None
+[2026/05/16 12:50:21] ppocr INFO:             NormalizeImage : 
+[2026/05/16 12:50:21] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/16 12:50:21] ppocr INFO:                 order : hwc
+[2026/05/16 12:50:21] ppocr INFO:                 scale : 1./255.
+[2026/05/16 12:50:21] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/16 12:50:21] ppocr INFO:             ToCHWImage : None
+[2026/05/16 12:50:21] ppocr INFO:             KeepKeys : 
+[2026/05/16 12:50:21] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2026/05/16 12:50:21] ppocr INFO:     loader : 
+[2026/05/16 12:50:21] ppocr INFO:         batch_size_per_card : 1
+[2026/05/16 12:50:21] ppocr INFO:         drop_last : False
+[2026/05/16 12:50:21] ppocr INFO:         num_workers : 2
+[2026/05/16 12:50:21] ppocr INFO:         shuffle : False
+[2026/05/16 12:50:21] ppocr INFO: Global : 
+[2026/05/16 12:50:21] ppocr INFO:     cal_metric_during_train : False
+[2026/05/16 12:50:21] ppocr INFO:     checkpoints : None
+[2026/05/16 12:50:21] ppocr INFO:     d2s_train_image_shape : [3, 640, 640]
+[2026/05/16 12:50:21] ppocr INFO:     debug : False
+[2026/05/16 12:50:21] ppocr INFO:     distributed : False
+[2026/05/16 12:50:21] ppocr INFO:     epoch_num : 50
+[2026/05/16 12:50:21] ppocr INFO:     eval_batch_step : [0, 1500]
+[2026/05/16 12:50:21] ppocr INFO:     infer_img : doc/imgs_en/img_10.jpg
+[2026/05/16 12:50:21] ppocr INFO:     log_smooth_window : 20
+[2026/05/16 12:50:21] ppocr INFO:     model_name : PP-OCRv4_mobile_det
+[2026/05/16 12:50:21] ppocr INFO:     pretrained_model : https://paddleocr.bj.bcebos.com/pretrained/PPLCNetV3_x0_75_ocr_det.pdparams
+[2026/05/16 12:50:21] ppocr INFO:     print_batch_step : 100
+[2026/05/16 12:50:21] ppocr INFO:     save_epoch_step : 10
+[2026/05/16 12:50:21] ppocr INFO:     save_inference_dir : None
+[2026/05/16 12:50:21] ppocr INFO:     save_model_dir : ./output/PP-OCRv4_mobile_det
+[2026/05/16 12:50:21] ppocr INFO:     save_res_path : ./checkpoints/det_db/predicts_db.txt
+[2026/05/16 12:50:21] ppocr INFO:     use_gpu : True
+[2026/05/16 12:50:21] ppocr INFO:     use_visualdl : False
+[2026/05/16 12:50:21] ppocr INFO: Loss : 
+[2026/05/16 12:50:21] ppocr INFO:     alpha : 5
+[2026/05/16 12:50:21] ppocr INFO:     balance_loss : True
+[2026/05/16 12:50:21] ppocr INFO:     beta : 10
+[2026/05/16 12:50:21] ppocr INFO:     main_loss_type : DiceLoss
+[2026/05/16 12:50:21] ppocr INFO:     name : DBLoss
+[2026/05/16 12:50:21] ppocr INFO:     ohem_ratio : 3
+[2026/05/16 12:50:21] ppocr INFO: Metric : 
+[2026/05/16 12:50:21] ppocr INFO:     main_indicator : hmean
+[2026/05/16 12:50:21] ppocr INFO:     name : DetMetric
+[2026/05/16 12:50:21] ppocr INFO: Optimizer : 
+[2026/05/16 12:50:21] ppocr INFO:     beta1 : 0.9
+[2026/05/16 12:50:21] ppocr INFO:     beta2 : 0.999
+[2026/05/16 12:50:21] ppocr INFO:     lr : 
+[2026/05/16 12:50:21] ppocr INFO:         learning_rate : 0.001
+[2026/05/16 12:50:21] ppocr INFO:         name : Cosine
+[2026/05/16 12:50:21] ppocr INFO:         warmup_epoch : 2
+[2026/05/16 12:50:21] ppocr INFO:     name : Adam
+[2026/05/16 12:50:21] ppocr INFO:     regularizer : 
+[2026/05/16 12:50:21] ppocr INFO:         factor : 5e-05
+[2026/05/16 12:50:21] ppocr INFO:         name : L2
+[2026/05/16 12:50:21] ppocr INFO: PostProcess : 
+[2026/05/16 12:50:21] ppocr INFO:     box_thresh : 0.6
+[2026/05/16 12:50:21] ppocr INFO:     max_candidates : 1000
+[2026/05/16 12:50:21] ppocr INFO:     name : DBPostProcess
+[2026/05/16 12:50:21] ppocr INFO:     thresh : 0.3
+[2026/05/16 12:50:21] ppocr INFO:     unclip_ratio : 1.5
+[2026/05/16 12:50:21] ppocr INFO: Train : 
+[2026/05/16 12:50:21] ppocr INFO:     dataset : 
+[2026/05/16 12:50:21] ppocr INFO:         data_dir : ./data/train/
+[2026/05/16 12:50:21] ppocr INFO:         label_file_list : ['./data/train/label.txt']
+[2026/05/16 12:50:21] ppocr INFO:         name : SimpleDataSet
+[2026/05/16 12:50:21] ppocr INFO:         ratio_list : [1.0]
+[2026/05/16 12:50:21] ppocr INFO:         transforms : 
+[2026/05/16 12:50:21] ppocr INFO:             DecodeImage : 
+[2026/05/16 12:50:21] ppocr INFO:                 channel_first : False
+[2026/05/16 12:50:21] ppocr INFO:                 img_mode : BGR
+[2026/05/16 12:50:21] ppocr INFO:             DetLabelEncode : None
+[2026/05/16 12:50:21] ppocr INFO:             CopyPaste : None
+[2026/05/16 12:50:21] ppocr INFO:             IaaAugment : 
+[2026/05/16 12:50:21] ppocr INFO:                 augmenter_args : 
+[2026/05/16 12:50:21] ppocr INFO:                     args : 
+[2026/05/16 12:50:21] ppocr INFO:                         p : 0.5
+[2026/05/16 12:50:21] ppocr INFO:                     type : Fliplr
+[2026/05/16 12:50:21] ppocr INFO:                     args : 
+[2026/05/16 12:50:21] ppocr INFO:                         rotate : [-10, 10]
+[2026/05/16 12:50:21] ppocr INFO:                     type : Affine
+[2026/05/16 12:50:21] ppocr INFO:                     args : 
+[2026/05/16 12:50:21] ppocr INFO:                         size : [0.5, 3]
+[2026/05/16 12:50:21] ppocr INFO:                     type : Resize
+[2026/05/16 12:50:21] ppocr INFO:             EastRandomCropData : 
+[2026/05/16 12:50:21] ppocr INFO:                 keep_ratio : True
+[2026/05/16 12:50:21] ppocr INFO:                 max_tries : 50
+[2026/05/16 12:50:21] ppocr INFO:                 size : [640, 640]
+[2026/05/16 12:50:21] ppocr INFO:             MakeBorderMap : 
+[2026/05/16 12:50:21] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/16 12:50:21] ppocr INFO:                 thresh_max : 0.7
+[2026/05/16 12:50:21] ppocr INFO:                 thresh_min : 0.3
+[2026/05/16 12:50:21] ppocr INFO:                 total_epoch : 50
+[2026/05/16 12:50:21] ppocr INFO:             MakeShrinkMap : 
+[2026/05/16 12:50:21] ppocr INFO:                 min_text_size : 8
+[2026/05/16 12:50:21] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/16 12:50:21] ppocr INFO:                 total_epoch : 50
+[2026/05/16 12:50:21] ppocr INFO:             NormalizeImage : 
+[2026/05/16 12:50:21] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/16 12:50:21] ppocr INFO:                 order : hwc
+[2026/05/16 12:50:21] ppocr INFO:                 scale : 1./255.
+[2026/05/16 12:50:21] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/16 12:50:21] ppocr INFO:             ToCHWImage : None
+[2026/05/16 12:50:21] ppocr INFO:             KeepKeys : 
+[2026/05/16 12:50:21] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2026/05/16 12:50:21] ppocr INFO:     loader : 
+[2026/05/16 12:50:21] ppocr INFO:         batch_size_per_card : 8
+[2026/05/16 12:50:21] ppocr INFO:         drop_last : False
+[2026/05/16 12:50:21] ppocr INFO:         num_workers : 8
+[2026/05/16 12:50:21] ppocr INFO:         shuffle : True
+[2026/05/16 12:50:21] ppocr INFO: profiler_options : None
+[2026/05/16 12:50:21] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2026/05/16 12:50:21] ppocr INFO: Initialize indexes of datasets:['./data/train/label.txt']
+[2026/05/16 12:50:21] ppocr INFO: Initialize indexes of datasets:['./data/val/label.txt']
+[2026/05/16 12:50:36] ppocr INFO: Architecture : 
+[2026/05/16 12:50:36] ppocr INFO:     Backbone : 
+[2026/05/16 12:50:36] ppocr INFO:         det : True
+[2026/05/16 12:50:36] ppocr INFO:         name : PPLCNetV3
+[2026/05/16 12:50:36] ppocr INFO:         scale : 0.75
+[2026/05/16 12:50:36] ppocr INFO:     Head : 
+[2026/05/16 12:50:36] ppocr INFO:         fix_nan : True
+[2026/05/16 12:50:36] ppocr INFO:         k : 50
+[2026/05/16 12:50:36] ppocr INFO:         name : DBHead
+[2026/05/16 12:50:36] ppocr INFO:     Neck : 
+[2026/05/16 12:50:36] ppocr INFO:         name : RSEFPN
+[2026/05/16 12:50:36] ppocr INFO:         out_channels : 96
+[2026/05/16 12:50:36] ppocr INFO:         shortcut : True
+[2026/05/16 12:50:36] ppocr INFO:     Transform : None
+[2026/05/16 12:50:36] ppocr INFO:     algorithm : DB
+[2026/05/16 12:50:36] ppocr INFO:     model_type : det
+[2026/05/16 12:50:36] ppocr INFO: Eval : 
+[2026/05/16 12:50:36] ppocr INFO:     dataset : 
+[2026/05/16 12:50:36] ppocr INFO:         data_dir : ./data/val/
+[2026/05/16 12:50:36] ppocr INFO:         label_file_list : ['./data/val/label.txt']
+[2026/05/16 12:50:36] ppocr INFO:         name : SimpleDataSet
+[2026/05/16 12:50:36] ppocr INFO:         transforms : 
+[2026/05/16 12:50:36] ppocr INFO:             DecodeImage : 
+[2026/05/16 12:50:36] ppocr INFO:                 channel_first : False
+[2026/05/16 12:50:36] ppocr INFO:                 img_mode : BGR
+[2026/05/16 12:50:36] ppocr INFO:             DetLabelEncode : None
+[2026/05/16 12:50:36] ppocr INFO:             DetResizeForTest : None
+[2026/05/16 12:50:36] ppocr INFO:             NormalizeImage : 
+[2026/05/16 12:50:36] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/16 12:50:36] ppocr INFO:                 order : hwc
+[2026/05/16 12:50:36] ppocr INFO:                 scale : 1./255.
+[2026/05/16 12:50:36] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/16 12:50:36] ppocr INFO:             ToCHWImage : None
+[2026/05/16 12:50:36] ppocr INFO:             KeepKeys : 
+[2026/05/16 12:50:36] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2026/05/16 12:50:36] ppocr INFO:     loader : 
+[2026/05/16 12:50:36] ppocr INFO:         batch_size_per_card : 1
+[2026/05/16 12:50:36] ppocr INFO:         drop_last : False
+[2026/05/16 12:50:36] ppocr INFO:         num_workers : 2
+[2026/05/16 12:50:36] ppocr INFO:         shuffle : False
+[2026/05/16 12:50:36] ppocr INFO: Global : 
+[2026/05/16 12:50:36] ppocr INFO:     cal_metric_during_train : False
+[2026/05/16 12:50:36] ppocr INFO:     checkpoints : None
+[2026/05/16 12:50:36] ppocr INFO:     d2s_train_image_shape : [3, 640, 640]
+[2026/05/16 12:50:36] ppocr INFO:     debug : False
+[2026/05/16 12:50:36] ppocr INFO:     distributed : False
+[2026/05/16 12:50:36] ppocr INFO:     epoch_num : 50
+[2026/05/16 12:50:36] ppocr INFO:     eval_batch_step : [0, 1500]
+[2026/05/16 12:50:36] ppocr INFO:     infer_img : doc/imgs_en/img_10.jpg
+[2026/05/16 12:50:36] ppocr INFO:     log_smooth_window : 20
+[2026/05/16 12:50:36] ppocr INFO:     model_name : PP-OCRv4_mobile_det
+[2026/05/16 12:50:36] ppocr INFO:     pretrained_model : https://paddleocr.bj.bcebos.com/pretrained/PPLCNetV3_x0_75_ocr_det.pdparams
+[2026/05/16 12:50:36] ppocr INFO:     print_batch_step : 100
+[2026/05/16 12:50:36] ppocr INFO:     save_epoch_step : 10
+[2026/05/16 12:50:36] ppocr INFO:     save_inference_dir : None
+[2026/05/16 12:50:36] ppocr INFO:     save_model_dir : ./output/PP-OCRv4_mobile_det
+[2026/05/16 12:50:36] ppocr INFO:     save_res_path : ./checkpoints/det_db/predicts_db.txt
+[2026/05/16 12:50:36] ppocr INFO:     use_gpu : True
+[2026/05/16 12:50:36] ppocr INFO:     use_visualdl : False
+[2026/05/16 12:50:36] ppocr INFO: Loss : 
+[2026/05/16 12:50:36] ppocr INFO:     alpha : 5
+[2026/05/16 12:50:36] ppocr INFO:     balance_loss : True
+[2026/05/16 12:50:36] ppocr INFO:     beta : 10
+[2026/05/16 12:50:36] ppocr INFO:     main_loss_type : DiceLoss
+[2026/05/16 12:50:36] ppocr INFO:     name : DBLoss
+[2026/05/16 12:50:36] ppocr INFO:     ohem_ratio : 3
+[2026/05/16 12:50:36] ppocr INFO: Metric : 
+[2026/05/16 12:50:36] ppocr INFO:     main_indicator : hmean
+[2026/05/16 12:50:36] ppocr INFO:     name : DetMetric
+[2026/05/16 12:50:36] ppocr INFO: Optimizer : 
+[2026/05/16 12:50:36] ppocr INFO:     beta1 : 0.9
+[2026/05/16 12:50:36] ppocr INFO:     beta2 : 0.999
+[2026/05/16 12:50:36] ppocr INFO:     lr : 
+[2026/05/16 12:50:36] ppocr INFO:         learning_rate : 0.001
+[2026/05/16 12:50:36] ppocr INFO:         name : Cosine
+[2026/05/16 12:50:36] ppocr INFO:         warmup_epoch : 2
+[2026/05/16 12:50:36] ppocr INFO:     name : Adam
+[2026/05/16 12:50:36] ppocr INFO:     regularizer : 
+[2026/05/16 12:50:36] ppocr INFO:         factor : 5e-05
+[2026/05/16 12:50:36] ppocr INFO:         name : L2
+[2026/05/16 12:50:36] ppocr INFO: PostProcess : 
+[2026/05/16 12:50:36] ppocr INFO:     box_thresh : 0.6
+[2026/05/16 12:50:36] ppocr INFO:     max_candidates : 1000
+[2026/05/16 12:50:36] ppocr INFO:     name : DBPostProcess
+[2026/05/16 12:50:36] ppocr INFO:     thresh : 0.3
+[2026/05/16 12:50:36] ppocr INFO:     unclip_ratio : 1.5
+[2026/05/16 12:50:36] ppocr INFO: Train : 
+[2026/05/16 12:50:36] ppocr INFO:     dataset : 
+[2026/05/16 12:50:36] ppocr INFO:         data_dir : ./data/train/
+[2026/05/16 12:50:36] ppocr INFO:         label_file_list : ['./data/train/label.txt']
+[2026/05/16 12:50:36] ppocr INFO:         name : SimpleDataSet
+[2026/05/16 12:50:36] ppocr INFO:         ratio_list : [1.0]
+[2026/05/16 12:50:36] ppocr INFO:         transforms : 
+[2026/05/16 12:50:36] ppocr INFO:             DecodeImage : 
+[2026/05/16 12:50:36] ppocr INFO:                 channel_first : False
+[2026/05/16 12:50:36] ppocr INFO:                 img_mode : BGR
+[2026/05/16 12:50:36] ppocr INFO:             DetLabelEncode : None
+[2026/05/16 12:50:36] ppocr INFO:             CopyPaste : None
+[2026/05/16 12:50:36] ppocr INFO:             IaaAugment : 
+[2026/05/16 12:50:36] ppocr INFO:                 augmenter_args : 
+[2026/05/16 12:50:36] ppocr INFO:                     args : 
+[2026/05/16 12:50:36] ppocr INFO:                         p : 0.5
+[2026/05/16 12:50:36] ppocr INFO:                     type : Fliplr
+[2026/05/16 12:50:36] ppocr INFO:                     args : 
+[2026/05/16 12:50:36] ppocr INFO:                         rotate : [-10, 10]
+[2026/05/16 12:50:36] ppocr INFO:                     type : Affine
+[2026/05/16 12:50:36] ppocr INFO:                     args : 
+[2026/05/16 12:50:36] ppocr INFO:                         size : [0.5, 3]
+[2026/05/16 12:50:36] ppocr INFO:                     type : Resize
+[2026/05/16 12:50:36] ppocr INFO:             EastRandomCropData : 
+[2026/05/16 12:50:36] ppocr INFO:                 keep_ratio : True
+[2026/05/16 12:50:36] ppocr INFO:                 max_tries : 50
+[2026/05/16 12:50:36] ppocr INFO:                 size : [640, 640]
+[2026/05/16 12:50:36] ppocr INFO:             MakeBorderMap : 
+[2026/05/16 12:50:36] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/16 12:50:36] ppocr INFO:                 thresh_max : 0.7
+[2026/05/16 12:50:36] ppocr INFO:                 thresh_min : 0.3
+[2026/05/16 12:50:36] ppocr INFO:                 total_epoch : 50
+[2026/05/16 12:50:36] ppocr INFO:             MakeShrinkMap : 
+[2026/05/16 12:50:36] ppocr INFO:                 min_text_size : 8
+[2026/05/16 12:50:36] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/16 12:50:36] ppocr INFO:                 total_epoch : 50
+[2026/05/16 12:50:36] ppocr INFO:             NormalizeImage : 
+[2026/05/16 12:50:36] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/16 12:50:36] ppocr INFO:                 order : hwc
+[2026/05/16 12:50:36] ppocr INFO:                 scale : 1./255.
+[2026/05/16 12:50:36] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/16 12:50:36] ppocr INFO:             ToCHWImage : None
+[2026/05/16 12:50:36] ppocr INFO:             KeepKeys : 
+[2026/05/16 12:50:36] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2026/05/16 12:50:36] ppocr INFO:     loader : 
+[2026/05/16 12:50:36] ppocr INFO:         batch_size_per_card : 8
+[2026/05/16 12:50:36] ppocr INFO:         drop_last : False
+[2026/05/16 12:50:36] ppocr INFO:         num_workers : 8
+[2026/05/16 12:50:36] ppocr INFO:         shuffle : True
+[2026/05/16 12:50:36] ppocr INFO: profiler_options : None
+[2026/05/16 12:50:36] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2026/05/16 12:50:36] ppocr INFO: Initialize indexes of datasets:['./data/train/label.txt']
+[2026/05/16 12:50:36] ppocr INFO: Initialize indexes of datasets:['./data/val/label.txt']
+[2026/05/16 12:50:37] ppocr INFO: train dataloader has 25 iters
+[2026/05/16 12:50:37] ppocr INFO: valid dataloader has 50 iters
+[2026/05/16 12:50:39] ppocr WARNING: The pretrained params backbone.last_conv.weight not in model
+[2026/05/16 12:50:39] ppocr WARNING: The pretrained params backbone.act.lab.scale not in model
+[2026/05/16 12:50:39] ppocr WARNING: The pretrained params backbone.act.lab.bias not in model
+[2026/05/16 12:50:39] ppocr WARNING: The pretrained params backbone.fc.weight not in model
+[2026/05/16 12:50:39] ppocr WARNING: The pretrained params backbone.fc.bias not in model
+[2026/05/16 12:50:39] ppocr INFO: load pretrain successful from /home/leop2d/.paddleocr/models/PPLCNetV3_x0_75_ocr_det
+[2026/05/16 12:50:39] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 1500 iterations
+[2026/05/16 12:50:51] ppocr INFO: epoch: [1/50], global_step: 25, lr: 0.000290, loss: 7.365881, loss_shrink_maps: 4.857982, loss_threshold_maps: 1.565145, loss_binary_maps: 0.974090, loss_cbn: 0.000000, avg_reader_cost: 0.01353 s, avg_batch_cost: 0.12434 s, avg_samples: 2.0, ips: 16.08475 samples/s, eta: 0:10:09, max_mem_reserved: 5777 MB, max_mem_allocated: 5324 MB
+[2026/05/16 12:50:51] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:51:03] ppocr INFO: epoch: [2/50], global_step: 50, lr: 0.000790, loss: 6.902374, loss_shrink_maps: 4.813741, loss_threshold_maps: 1.125293, loss_binary_maps: 0.962862, loss_cbn: 0.000000, avg_reader_cost: 0.01371 s, avg_batch_cost: 0.11525 s, avg_samples: 2.0, ips: 17.35362 samples/s, eta: 0:09:35, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:51:03] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:51:14] ppocr INFO: epoch: [3/50], global_step: 75, lr: 0.001000, loss: 6.750256, loss_shrink_maps: 4.704234, loss_threshold_maps: 1.122424, loss_binary_maps: 0.923179, loss_cbn: 0.000000, avg_reader_cost: 0.01454 s, avg_batch_cost: 0.11711 s, avg_samples: 2.0, ips: 17.07809 samples/s, eta: 0:09:18, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:51:15] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:51:26] ppocr INFO: epoch: [4/50], global_step: 100, lr: 0.000998, loss: 6.546296, loss_shrink_maps: 4.576933, loss_threshold_maps: 1.122825, loss_binary_maps: 0.849009, loss_cbn: 0.000000, avg_reader_cost: 0.01608 s, avg_batch_cost: 0.11871 s, avg_samples: 2.0, ips: 16.84750 samples/s, eta: 0:09:06, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:51:27] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:51:38] ppocr INFO: epoch: [5/50], global_step: 125, lr: 0.000993, loss: 6.394218, loss_shrink_maps: 4.464833, loss_threshold_maps: 1.114462, loss_binary_maps: 0.815162, loss_cbn: 0.000000, avg_reader_cost: 0.01747 s, avg_batch_cost: 0.11975 s, avg_samples: 2.0, ips: 16.70115 samples/s, eta: 0:08:55, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:51:39] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:51:50] ppocr INFO: epoch: [6/50], global_step: 150, lr: 0.000987, loss: 6.194397, loss_shrink_maps: 4.310219, loss_threshold_maps: 1.084819, loss_binary_maps: 0.785228, loss_cbn: 0.000000, avg_reader_cost: 0.01362 s, avg_batch_cost: 0.11754 s, avg_samples: 2.0, ips: 17.01547 samples/s, eta: 0:08:42, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:51:50] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:52:02] ppocr INFO: epoch: [7/50], global_step: 175, lr: 0.000979, loss: 6.010376, loss_shrink_maps: 4.238489, loss_threshold_maps: 1.002807, loss_binary_maps: 0.785689, loss_cbn: 0.000000, avg_reader_cost: 0.01609 s, avg_batch_cost: 0.12168 s, avg_samples: 2.0, ips: 16.43696 samples/s, eta: 0:08:32, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:52:03] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:52:14] ppocr INFO: epoch: [8/50], global_step: 200, lr: 0.000970, loss: 5.786630, loss_shrink_maps: 4.102407, loss_threshold_maps: 0.884293, loss_binary_maps: 0.736398, loss_cbn: 0.000000, avg_reader_cost: 0.01500 s, avg_batch_cost: 0.12112 s, avg_samples: 2.0, ips: 16.51238 samples/s, eta: 0:08:21, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:52:15] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:52:27] ppocr INFO: epoch: [9/50], global_step: 225, lr: 0.000958, loss: 5.198534, loss_shrink_maps: 3.822603, loss_threshold_maps: 0.749386, loss_binary_maps: 0.646538, loss_cbn: 0.000000, avg_reader_cost: 0.01533 s, avg_batch_cost: 0.12157 s, avg_samples: 2.0, ips: 16.45171 samples/s, eta: 0:08:10, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:52:27] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:52:39] ppocr INFO: epoch: [10/50], global_step: 250, lr: 0.000944, loss: 4.584563, loss_shrink_maps: 3.450055, loss_threshold_maps: 0.667757, loss_binary_maps: 0.537884, loss_cbn: 0.000000, avg_reader_cost: 0.01596 s, avg_batch_cost: 0.12085 s, avg_samples: 2.0, ips: 16.54957 samples/s, eta: 0:07:59, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:52:39] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:52:39] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/iter_epoch_10
+[2026/05/16 12:52:51] ppocr INFO: epoch: [11/50], global_step: 275, lr: 0.000929, loss: 3.906798, loss_shrink_maps: 2.878484, loss_threshold_maps: 0.575391, loss_binary_maps: 0.462201, loss_cbn: 0.000000, avg_reader_cost: 0.01920 s, avg_batch_cost: 0.12220 s, avg_samples: 2.0, ips: 16.36633 samples/s, eta: 0:07:48, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:52:51] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:53:02] ppocr INFO: epoch: [12/50], global_step: 300, lr: 0.000912, loss: 3.429738, loss_shrink_maps: 2.469609, loss_threshold_maps: 0.535276, loss_binary_maps: 0.398569, loss_cbn: 0.000000, avg_reader_cost: 0.01304 s, avg_batch_cost: 0.11602 s, avg_samples: 2.0, ips: 17.23809 samples/s, eta: 0:07:34, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:53:03] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:53:14] ppocr INFO: epoch: [13/50], global_step: 325, lr: 0.000894, loss: 2.730376, loss_shrink_maps: 1.904626, loss_threshold_maps: 0.571183, loss_binary_maps: 0.259148, loss_cbn: 0.000000, avg_reader_cost: 0.01250 s, avg_batch_cost: 0.11568 s, avg_samples: 2.0, ips: 17.28922 samples/s, eta: 0:07:21, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:53:14] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:53:26] ppocr INFO: epoch: [14/50], global_step: 350, lr: 0.000873, loss: 2.136518, loss_shrink_maps: 1.344888, loss_threshold_maps: 0.547863, loss_binary_maps: 0.213845, loss_cbn: 0.000000, avg_reader_cost: 0.01285 s, avg_batch_cost: 0.11638 s, avg_samples: 2.0, ips: 17.18506 samples/s, eta: 0:07:08, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:53:26] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:53:37] ppocr INFO: epoch: [15/50], global_step: 375, lr: 0.000852, loss: 1.769865, loss_shrink_maps: 1.096046, loss_threshold_maps: 0.509714, loss_binary_maps: 0.181909, loss_cbn: 0.000000, avg_reader_cost: 0.01257 s, avg_batch_cost: 0.11720 s, avg_samples: 2.0, ips: 17.06548 samples/s, eta: 0:06:56, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:53:38] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:53:49] ppocr INFO: epoch: [16/50], global_step: 400, lr: 0.000829, loss: 1.401740, loss_shrink_maps: 0.815524, loss_threshold_maps: 0.450948, loss_binary_maps: 0.134189, loss_cbn: 0.000000, avg_reader_cost: 0.01250 s, avg_batch_cost: 0.11564 s, avg_samples: 2.0, ips: 17.29479 samples/s, eta: 0:06:43, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:53:49] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:54:01] ppocr INFO: epoch: [17/50], global_step: 425, lr: 0.000804, loss: 1.362898, loss_shrink_maps: 0.788330, loss_threshold_maps: 0.429978, loss_binary_maps: 0.131532, loss_cbn: 0.000000, avg_reader_cost: 0.01462 s, avg_batch_cost: 0.11855 s, avg_samples: 2.0, ips: 16.87115 samples/s, eta: 0:06:32, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:54:01] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:54:13] ppocr INFO: epoch: [18/50], global_step: 450, lr: 0.000779, loss: 1.595422, loss_shrink_maps: 0.957380, loss_threshold_maps: 0.464569, loss_binary_maps: 0.170224, loss_cbn: 0.000000, avg_reader_cost: 0.01611 s, avg_batch_cost: 0.12018 s, avg_samples: 2.0, ips: 16.64148 samples/s, eta: 0:06:20, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:54:13] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:54:25] ppocr INFO: epoch: [19/50], global_step: 475, lr: 0.000752, loss: 1.586244, loss_shrink_maps: 0.953466, loss_threshold_maps: 0.466169, loss_binary_maps: 0.171467, loss_cbn: 0.000000, avg_reader_cost: 0.01222 s, avg_batch_cost: 0.11659 s, avg_samples: 2.0, ips: 17.15417 samples/s, eta: 0:06:08, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:54:25] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:54:37] ppocr INFO: epoch: [20/50], global_step: 500, lr: 0.000725, loss: 1.419110, loss_shrink_maps: 0.798281, loss_threshold_maps: 0.447782, loss_binary_maps: 0.144238, loss_cbn: 0.000000, avg_reader_cost: 0.01445 s, avg_batch_cost: 0.11972 s, avg_samples: 2.0, ips: 16.70573 samples/s, eta: 0:05:56, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:54:37] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:54:37] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/iter_epoch_20
+[2026/05/16 12:54:48] ppocr INFO: epoch: [21/50], global_step: 525, lr: 0.000696, loss: 1.473336, loss_shrink_maps: 0.846454, loss_threshold_maps: 0.461963, loss_binary_maps: 0.155635, loss_cbn: 0.000000, avg_reader_cost: 0.01518 s, avg_batch_cost: 0.11821 s, avg_samples: 2.0, ips: 16.91958 samples/s, eta: 0:05:44, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:54:49] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:55:00] ppocr INFO: epoch: [22/50], global_step: 550, lr: 0.000667, loss: 1.325135, loss_shrink_maps: 0.768453, loss_threshold_maps: 0.407637, loss_binary_maps: 0.140971, loss_cbn: 0.000000, avg_reader_cost: 0.01337 s, avg_batch_cost: 0.11856 s, avg_samples: 2.0, ips: 16.86956 samples/s, eta: 0:05:32, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:55:01] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:55:12] ppocr INFO: epoch: [23/50], global_step: 575, lr: 0.000637, loss: 1.443139, loss_shrink_maps: 0.873222, loss_threshold_maps: 0.438675, loss_binary_maps: 0.160241, loss_cbn: 0.000000, avg_reader_cost: 0.01589 s, avg_batch_cost: 0.11920 s, avg_samples: 2.0, ips: 16.77890 samples/s, eta: 0:05:20, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:55:12] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:55:24] ppocr INFO: epoch: [24/50], global_step: 600, lr: 0.000607, loss: 1.283174, loss_shrink_maps: 0.751831, loss_threshold_maps: 0.403892, loss_binary_maps: 0.136181, loss_cbn: 0.000000, avg_reader_cost: 0.01422 s, avg_batch_cost: 0.11871 s, avg_samples: 2.0, ips: 16.84772 samples/s, eta: 0:05:08, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:55:24] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:55:36] ppocr INFO: epoch: [25/50], global_step: 625, lr: 0.000576, loss: 1.256758, loss_shrink_maps: 0.731697, loss_threshold_maps: 0.404788, loss_binary_maps: 0.138028, loss_cbn: 0.000000, avg_reader_cost: 0.01215 s, avg_batch_cost: 0.11580 s, avg_samples: 2.0, ips: 17.27161 samples/s, eta: 0:04:56, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:55:36] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:55:47] ppocr INFO: epoch: [26/50], global_step: 650, lr: 0.000545, loss: 1.444630, loss_shrink_maps: 0.836586, loss_threshold_maps: 0.442439, loss_binary_maps: 0.153570, loss_cbn: 0.000000, avg_reader_cost: 0.01179 s, avg_batch_cost: 0.11486 s, avg_samples: 2.0, ips: 17.41183 samples/s, eta: 0:04:44, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:55:47] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:55:59] ppocr INFO: epoch: [27/50], global_step: 675, lr: 0.000513, loss: 1.332587, loss_shrink_maps: 0.746392, loss_threshold_maps: 0.410389, loss_binary_maps: 0.138743, loss_cbn: 0.000000, avg_reader_cost: 0.01632 s, avg_batch_cost: 0.11920 s, avg_samples: 2.0, ips: 16.77832 samples/s, eta: 0:04:32, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:55:59] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:56:11] ppocr INFO: epoch: [28/50], global_step: 700, lr: 0.000482, loss: 1.498234, loss_shrink_maps: 0.872147, loss_threshold_maps: 0.441004, loss_binary_maps: 0.164023, loss_cbn: 0.000000, avg_reader_cost: 0.02143 s, avg_batch_cost: 0.12308 s, avg_samples: 2.0, ips: 16.24913 samples/s, eta: 0:04:21, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:56:12] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:56:23] ppocr INFO: epoch: [29/50], global_step: 725, lr: 0.000450, loss: 1.381767, loss_shrink_maps: 0.787499, loss_threshold_maps: 0.425936, loss_binary_maps: 0.149516, loss_cbn: 0.000000, avg_reader_cost: 0.01305 s, avg_batch_cost: 0.11734 s, avg_samples: 2.0, ips: 17.04487 samples/s, eta: 0:04:09, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:56:23] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:56:35] ppocr INFO: epoch: [30/50], global_step: 750, lr: 0.000419, loss: 1.545020, loss_shrink_maps: 0.891858, loss_threshold_maps: 0.437184, loss_binary_maps: 0.169368, loss_cbn: 0.000000, avg_reader_cost: 0.01727 s, avg_batch_cost: 0.12179 s, avg_samples: 2.0, ips: 16.42173 samples/s, eta: 0:03:57, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:56:36] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:56:36] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/iter_epoch_30
+[2026/05/16 12:56:47] ppocr INFO: epoch: [31/50], global_step: 775, lr: 0.000388, loss: 1.439360, loss_shrink_maps: 0.840819, loss_threshold_maps: 0.415431, loss_binary_maps: 0.159360, loss_cbn: 0.000000, avg_reader_cost: 0.01773 s, avg_batch_cost: 0.12117 s, avg_samples: 2.0, ips: 16.50594 samples/s, eta: 0:03:45, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:56:48] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:56:59] ppocr INFO: epoch: [32/50], global_step: 800, lr: 0.000358, loss: 1.312199, loss_shrink_maps: 0.778370, loss_threshold_maps: 0.398355, loss_binary_maps: 0.147287, loss_cbn: 0.000000, avg_reader_cost: 0.01352 s, avg_batch_cost: 0.11662 s, avg_samples: 2.0, ips: 17.15021 samples/s, eta: 0:03:33, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:56:59] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:57:11] ppocr INFO: epoch: [33/50], global_step: 825, lr: 0.000328, loss: 1.252125, loss_shrink_maps: 0.747342, loss_threshold_maps: 0.374688, loss_binary_maps: 0.141259, loss_cbn: 0.000000, avg_reader_cost: 0.01250 s, avg_batch_cost: 0.11529 s, avg_samples: 2.0, ips: 17.34723 samples/s, eta: 0:03:21, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:57:11] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:57:22] ppocr INFO: epoch: [34/50], global_step: 850, lr: 0.000299, loss: 1.241436, loss_shrink_maps: 0.721690, loss_threshold_maps: 0.385457, loss_binary_maps: 0.134812, loss_cbn: 0.000000, avg_reader_cost: 0.01254 s, avg_batch_cost: 0.11498 s, avg_samples: 2.0, ips: 17.39488 samples/s, eta: 0:03:09, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:57:22] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:57:34] ppocr INFO: epoch: [35/50], global_step: 875, lr: 0.000271, loss: 1.249294, loss_shrink_maps: 0.728248, loss_threshold_maps: 0.392729, loss_binary_maps: 0.137682, loss_cbn: 0.000000, avg_reader_cost: 0.01296 s, avg_batch_cost: 0.11540 s, avg_samples: 2.0, ips: 17.33094 samples/s, eta: 0:02:57, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:57:34] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:57:45] ppocr INFO: epoch: [36/50], global_step: 900, lr: 0.000243, loss: 1.222861, loss_shrink_maps: 0.722759, loss_threshold_maps: 0.375587, loss_binary_maps: 0.137411, loss_cbn: 0.000000, avg_reader_cost: 0.01581 s, avg_batch_cost: 0.11763 s, avg_samples: 2.0, ips: 17.00223 samples/s, eta: 0:02:45, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:57:46] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:57:57] ppocr INFO: epoch: [37/50], global_step: 925, lr: 0.000217, loss: 1.197304, loss_shrink_maps: 0.687028, loss_threshold_maps: 0.378167, loss_binary_maps: 0.130773, loss_cbn: 0.000000, avg_reader_cost: 0.01255 s, avg_batch_cost: 0.11534 s, avg_samples: 2.0, ips: 17.34027 samples/s, eta: 0:02:33, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:57:57] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:58:09] ppocr INFO: epoch: [38/50], global_step: 950, lr: 0.000192, loss: 1.169143, loss_shrink_maps: 0.690259, loss_threshold_maps: 0.386258, loss_binary_maps: 0.131526, loss_cbn: 0.000000, avg_reader_cost: 0.01210 s, avg_batch_cost: 0.11535 s, avg_samples: 2.0, ips: 17.33833 samples/s, eta: 0:02:21, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:58:09] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:58:20] ppocr INFO: epoch: [39/50], global_step: 975, lr: 0.000167, loss: 1.190808, loss_shrink_maps: 0.686759, loss_threshold_maps: 0.372539, loss_binary_maps: 0.129418, loss_cbn: 0.000000, avg_reader_cost: 0.01184 s, avg_batch_cost: 0.11507 s, avg_samples: 2.0, ips: 17.38133 samples/s, eta: 0:02:10, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:58:20] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:58:32] ppocr INFO: epoch: [40/50], global_step: 1000, lr: 0.000145, loss: 1.100753, loss_shrink_maps: 0.628354, loss_threshold_maps: 0.362602, loss_binary_maps: 0.118107, loss_cbn: 0.000000, avg_reader_cost: 0.01589 s, avg_batch_cost: 0.11997 s, avg_samples: 2.0, ips: 16.67070 samples/s, eta: 0:01:58, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:58:32] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:58:33] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/iter_epoch_40
+[2026/05/16 12:58:44] ppocr INFO: epoch: [41/50], global_step: 1025, lr: 0.000123, loss: 1.166956, loss_shrink_maps: 0.681484, loss_threshold_maps: 0.364567, loss_binary_maps: 0.129893, loss_cbn: 0.000000, avg_reader_cost: 0.01786 s, avg_batch_cost: 0.12166 s, avg_samples: 2.0, ips: 16.43948 samples/s, eta: 0:01:46, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:58:45] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:58:56] ppocr INFO: epoch: [42/50], global_step: 1050, lr: 0.000103, loss: 1.078228, loss_shrink_maps: 0.615779, loss_threshold_maps: 0.333619, loss_binary_maps: 0.116954, loss_cbn: 0.000000, avg_reader_cost: 0.01745 s, avg_batch_cost: 0.12227 s, avg_samples: 2.0, ips: 16.35684 samples/s, eta: 0:01:34, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:58:57] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:59:08] ppocr INFO: epoch: [43/50], global_step: 1075, lr: 0.000085, loss: 1.049522, loss_shrink_maps: 0.608560, loss_threshold_maps: 0.323089, loss_binary_maps: 0.115578, loss_cbn: 0.000000, avg_reader_cost: 0.01592 s, avg_batch_cost: 0.11888 s, avg_samples: 2.0, ips: 16.82307 samples/s, eta: 0:01:22, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:59:09] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:59:21] ppocr INFO: epoch: [44/50], global_step: 1100, lr: 0.000068, loss: 1.139400, loss_shrink_maps: 0.653339, loss_threshold_maps: 0.384080, loss_binary_maps: 0.123757, loss_cbn: 0.000000, avg_reader_cost: 0.01969 s, avg_batch_cost: 0.12195 s, avg_samples: 2.0, ips: 16.40007 samples/s, eta: 0:01:11, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:59:21] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:59:33] ppocr INFO: epoch: [45/50], global_step: 1125, lr: 0.000053, loss: 1.168038, loss_shrink_maps: 0.671748, loss_threshold_maps: 0.369448, loss_binary_maps: 0.127292, loss_cbn: 0.000000, avg_reader_cost: 0.01818 s, avg_batch_cost: 0.12249 s, avg_samples: 2.0, ips: 16.32837 samples/s, eta: 0:00:59, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:59:33] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:59:45] ppocr INFO: epoch: [46/50], global_step: 1150, lr: 0.000040, loss: 1.063779, loss_shrink_maps: 0.605130, loss_threshold_maps: 0.329074, loss_binary_maps: 0.114969, loss_cbn: 0.000000, avg_reader_cost: 0.01331 s, avg_batch_cost: 0.11740 s, avg_samples: 2.0, ips: 17.03572 samples/s, eta: 0:00:47, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:59:45] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 12:59:56] ppocr INFO: epoch: [47/50], global_step: 1175, lr: 0.000029, loss: 0.956502, loss_shrink_maps: 0.547468, loss_threshold_maps: 0.297110, loss_binary_maps: 0.103009, loss_cbn: 0.000000, avg_reader_cost: 0.01160 s, avg_batch_cost: 0.11566 s, avg_samples: 2.0, ips: 17.29179 samples/s, eta: 0:00:35, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 12:59:56] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 13:00:08] ppocr INFO: epoch: [48/50], global_step: 1200, lr: 0.000019, loss: 1.049000, loss_shrink_maps: 0.598035, loss_threshold_maps: 0.346316, loss_binary_maps: 0.112015, loss_cbn: 0.000000, avg_reader_cost: 0.01336 s, avg_batch_cost: 0.11959 s, avg_samples: 2.0, ips: 16.72425 samples/s, eta: 0:00:23, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 13:00:08] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 13:00:20] ppocr INFO: epoch: [49/50], global_step: 1225, lr: 0.000011, loss: 0.984271, loss_shrink_maps: 0.560848, loss_threshold_maps: 0.330577, loss_binary_maps: 0.105815, loss_cbn: 0.000000, avg_reader_cost: 0.01466 s, avg_batch_cost: 0.12003 s, avg_samples: 2.0, ips: 16.66191 samples/s, eta: 0:00:11, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 13:00:20] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 13:00:32] ppocr INFO: epoch: [50/50], global_step: 1250, lr: 0.000006, loss: 1.169450, loss_shrink_maps: 0.684342, loss_threshold_maps: 0.350171, loss_binary_maps: 0.131467, loss_cbn: 0.000000, avg_reader_cost: 0.01526 s, avg_batch_cost: 0.12267 s, avg_samples: 2.0, ips: 16.30348 samples/s, eta: 0:00:00, max_mem_reserved: 5777 MB, max_mem_allocated: 5325 MB
+[2026/05/16 13:00:33] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/latest
+[2026/05/16 13:00:33] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det/iter_epoch_50
+[2026/05/16 13:00:33] ppocr INFO: best metric, hmean: 0, is_float16: False
+[2026/05/29 17:15:53] ppocr INFO: Architecture : 
+[2026/05/29 17:15:53] ppocr INFO:     Backbone : 
+[2026/05/29 17:15:53] ppocr INFO:         det : True
+[2026/05/29 17:15:53] ppocr INFO:         name : PPLCNetV3
+[2026/05/29 17:15:53] ppocr INFO:         scale : 0.75
+[2026/05/29 17:15:53] ppocr INFO:     Head : 
+[2026/05/29 17:15:53] ppocr INFO:         fix_nan : True
+[2026/05/29 17:15:53] ppocr INFO:         k : 50
+[2026/05/29 17:15:53] ppocr INFO:         name : DBHead
+[2026/05/29 17:15:53] ppocr INFO:     Neck : 
+[2026/05/29 17:15:53] ppocr INFO:         name : RSEFPN
+[2026/05/29 17:15:53] ppocr INFO:         out_channels : 96
+[2026/05/29 17:15:53] ppocr INFO:         shortcut : True
+[2026/05/29 17:15:53] ppocr INFO:     Transform : None
+[2026/05/29 17:15:53] ppocr INFO:     algorithm : DB
+[2026/05/29 17:15:53] ppocr INFO:     model_type : det
+[2026/05/29 17:15:53] ppocr INFO: Eval : 
+[2026/05/29 17:15:53] ppocr INFO:     dataset : 
+[2026/05/29 17:15:53] ppocr INFO:         data_dir : ./data/val/
+[2026/05/29 17:15:53] ppocr INFO:         label_file_list : ['./data/val/label.txt']
+[2026/05/29 17:15:53] ppocr INFO:         name : SimpleDataSet
+[2026/05/29 17:15:53] ppocr INFO:         transforms : 
+[2026/05/29 17:15:53] ppocr INFO:             DecodeImage : 
+[2026/05/29 17:15:53] ppocr INFO:                 channel_first : False
+[2026/05/29 17:15:53] ppocr INFO:                 img_mode : BGR
+[2026/05/29 17:15:53] ppocr INFO:             DetLabelEncode : None
+[2026/05/29 17:15:53] ppocr INFO:             DetResizeForTest : None
+[2026/05/29 17:15:53] ppocr INFO:             NormalizeImage : 
+[2026/05/29 17:15:53] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/29 17:15:53] ppocr INFO:                 order : hwc
+[2026/05/29 17:15:53] ppocr INFO:                 scale : 1./255.
+[2026/05/29 17:15:53] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/29 17:15:53] ppocr INFO:             ToCHWImage : None
+[2026/05/29 17:15:53] ppocr INFO:             KeepKeys : 
+[2026/05/29 17:15:53] ppocr INFO:                 keep_keys : ['image', 'shape', 'polys', 'ignore_tags']
+[2026/05/29 17:15:53] ppocr INFO:     loader : 
+[2026/05/29 17:15:53] ppocr INFO:         batch_size_per_card : 1
+[2026/05/29 17:15:53] ppocr INFO:         drop_last : False
+[2026/05/29 17:15:53] ppocr INFO:         num_workers : 2
+[2026/05/29 17:15:53] ppocr INFO:         shuffle : False
+[2026/05/29 17:15:53] ppocr INFO: Global : 
+[2026/05/29 17:15:53] ppocr INFO:     cal_metric_during_train : False
+[2026/05/29 17:15:53] ppocr INFO:     checkpoints : None
+[2026/05/29 17:15:53] ppocr INFO:     d2s_train_image_shape : [3, 640, 640]
+[2026/05/29 17:15:53] ppocr INFO:     debug : False
+[2026/05/29 17:15:53] ppocr INFO:     distributed : False
+[2026/05/29 17:15:53] ppocr INFO:     epoch_num : 50
+[2026/05/29 17:15:53] ppocr INFO:     eval_batch_step : [0, 1500]
+[2026/05/29 17:15:53] ppocr INFO:     infer_img : doc/imgs_en/img_10.jpg
+[2026/05/29 17:15:53] ppocr INFO:     log_smooth_window : 20
+[2026/05/29 17:15:53] ppocr INFO:     model_name : PP-OCRv4_mobile_det
+[2026/05/29 17:15:53] ppocr INFO:     pretrained_model : https://paddleocr.bj.bcebos.com/pretrained/PPLCNetV3_x0_75_ocr_det.pdparams
+[2026/05/29 17:15:53] ppocr INFO:     print_batch_step : 100
+[2026/05/29 17:15:53] ppocr INFO:     save_epoch_step : 10
+[2026/05/29 17:15:53] ppocr INFO:     save_inference_dir : None
+[2026/05/29 17:15:53] ppocr INFO:     save_model_dir : ./output/PP-OCRv4_mobile_det
+[2026/05/29 17:15:53] ppocr INFO:     save_res_path : ./checkpoints/det_db/predicts_db.txt
+[2026/05/29 17:15:53] ppocr INFO:     use_gpu : True
+[2026/05/29 17:15:53] ppocr INFO:     use_visualdl : False
+[2026/05/29 17:15:53] ppocr INFO: Loss : 
+[2026/05/29 17:15:53] ppocr INFO:     alpha : 5
+[2026/05/29 17:15:53] ppocr INFO:     balance_loss : True
+[2026/05/29 17:15:53] ppocr INFO:     beta : 10
+[2026/05/29 17:15:53] ppocr INFO:     main_loss_type : DiceLoss
+[2026/05/29 17:15:53] ppocr INFO:     name : DBLoss
+[2026/05/29 17:15:53] ppocr INFO:     ohem_ratio : 3
+[2026/05/29 17:15:53] ppocr INFO: Metric : 
+[2026/05/29 17:15:53] ppocr INFO:     main_indicator : hmean
+[2026/05/29 17:15:53] ppocr INFO:     name : DetMetric
+[2026/05/29 17:15:53] ppocr INFO: Optimizer : 
+[2026/05/29 17:15:53] ppocr INFO:     beta1 : 0.9
+[2026/05/29 17:15:53] ppocr INFO:     beta2 : 0.999
+[2026/05/29 17:15:53] ppocr INFO:     lr : 
+[2026/05/29 17:15:53] ppocr INFO:         learning_rate : 0.001
+[2026/05/29 17:15:53] ppocr INFO:         name : Cosine
+[2026/05/29 17:15:53] ppocr INFO:         warmup_epoch : 2
+[2026/05/29 17:15:53] ppocr INFO:     name : Adam
+[2026/05/29 17:15:53] ppocr INFO:     regularizer : 
+[2026/05/29 17:15:53] ppocr INFO:         factor : 5e-05
+[2026/05/29 17:15:53] ppocr INFO:         name : L2
+[2026/05/29 17:15:53] ppocr INFO: PostProcess : 
+[2026/05/29 17:15:53] ppocr INFO:     box_thresh : 0.6
+[2026/05/29 17:15:53] ppocr INFO:     max_candidates : 1000
+[2026/05/29 17:15:53] ppocr INFO:     name : DBPostProcess
+[2026/05/29 17:15:53] ppocr INFO:     thresh : 0.3
+[2026/05/29 17:15:53] ppocr INFO:     unclip_ratio : 1.5
+[2026/05/29 17:15:53] ppocr INFO: Train : 
+[2026/05/29 17:15:53] ppocr INFO:     dataset : 
+[2026/05/29 17:15:53] ppocr INFO:         data_dir : ./data/train/
+[2026/05/29 17:15:53] ppocr INFO:         label_file_list : ['./data/train/label.txt']
+[2026/05/29 17:15:53] ppocr INFO:         name : SimpleDataSet
+[2026/05/29 17:15:53] ppocr INFO:         ratio_list : [1.0]
+[2026/05/29 17:15:53] ppocr INFO:         transforms : 
+[2026/05/29 17:15:53] ppocr INFO:             DecodeImage : 
+[2026/05/29 17:15:53] ppocr INFO:                 channel_first : False
+[2026/05/29 17:15:53] ppocr INFO:                 img_mode : BGR
+[2026/05/29 17:15:53] ppocr INFO:             DetLabelEncode : None
+[2026/05/29 17:15:53] ppocr INFO:             CopyPaste : None
+[2026/05/29 17:15:53] ppocr INFO:             IaaAugment : 
+[2026/05/29 17:15:53] ppocr INFO:                 augmenter_args : 
+[2026/05/29 17:15:53] ppocr INFO:                     args : 
+[2026/05/29 17:15:53] ppocr INFO:                         p : 0.5
+[2026/05/29 17:15:53] ppocr INFO:                     type : Fliplr
+[2026/05/29 17:15:53] ppocr INFO:                     args : 
+[2026/05/29 17:15:53] ppocr INFO:                         rotate : [-10, 10]
+[2026/05/29 17:15:53] ppocr INFO:                     type : Affine
+[2026/05/29 17:15:53] ppocr INFO:                     args : 
+[2026/05/29 17:15:53] ppocr INFO:                         size : [0.5, 3]
+[2026/05/29 17:15:53] ppocr INFO:                     type : Resize
+[2026/05/29 17:15:53] ppocr INFO:             EastRandomCropData : 
+[2026/05/29 17:15:53] ppocr INFO:                 keep_ratio : True
+[2026/05/29 17:15:53] ppocr INFO:                 max_tries : 50
+[2026/05/29 17:15:53] ppocr INFO:                 size : [640, 640]
+[2026/05/29 17:15:53] ppocr INFO:             MakeBorderMap : 
+[2026/05/29 17:15:53] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/29 17:15:53] ppocr INFO:                 thresh_max : 0.7
+[2026/05/29 17:15:53] ppocr INFO:                 thresh_min : 0.3
+[2026/05/29 17:15:53] ppocr INFO:                 total_epoch : 50
+[2026/05/29 17:15:53] ppocr INFO:             MakeShrinkMap : 
+[2026/05/29 17:15:53] ppocr INFO:                 min_text_size : 8
+[2026/05/29 17:15:53] ppocr INFO:                 shrink_ratio : 0.4
+[2026/05/29 17:15:53] ppocr INFO:                 total_epoch : 50
+[2026/05/29 17:15:53] ppocr INFO:             NormalizeImage : 
+[2026/05/29 17:15:53] ppocr INFO:                 mean : [0.485, 0.456, 0.406]
+[2026/05/29 17:15:53] ppocr INFO:                 order : hwc
+[2026/05/29 17:15:53] ppocr INFO:                 scale : 1./255.
+[2026/05/29 17:15:53] ppocr INFO:                 std : [0.229, 0.224, 0.225]
+[2026/05/29 17:15:53] ppocr INFO:             ToCHWImage : None
+[2026/05/29 17:15:53] ppocr INFO:             KeepKeys : 
+[2026/05/29 17:15:53] ppocr INFO:                 keep_keys : ['image', 'threshold_map', 'threshold_mask', 'shrink_map', 'shrink_mask']
+[2026/05/29 17:15:53] ppocr INFO:     loader : 
+[2026/05/29 17:15:53] ppocr INFO:         batch_size_per_card : 8
+[2026/05/29 17:15:53] ppocr INFO:         drop_last : False
+[2026/05/29 17:15:53] ppocr INFO:         num_workers : 8
+[2026/05/29 17:15:53] ppocr INFO:         shuffle : True
+[2026/05/29 17:15:53] ppocr INFO: profiler_options : None
+[2026/05/29 17:15:53] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2026/05/29 17:15:53] ppocr INFO: Initialize indexes of datasets:['./data/train/label.txt']
+[2026/05/29 17:15:53] ppocr INFO: Initialize indexes of datasets:['./data/val/label.txt']
+[2026/05/29 17:15:53] ppocr INFO: train dataloader has 25 iters
+[2026/05/29 17:15:53] ppocr INFO: valid dataloader has 50 iters
+[2026/05/29 17:15:55] ppocr WARNING: The pretrained params backbone.last_conv.weight not in model
+[2026/05/29 17:15:55] ppocr WARNING: The pretrained params backbone.act.lab.scale not in model
+[2026/05/29 17:15:55] ppocr WARNING: The pretrained params backbone.act.lab.bias not in model
+[2026/05/29 17:15:55] ppocr WARNING: The pretrained params backbone.fc.weight not in model
+[2026/05/29 17:15:55] ppocr WARNING: The pretrained params backbone.fc.bias not in model
+[2026/05/29 17:15:55] ppocr INFO: load pretrain successful from C:\Users\27695/.paddleocr/models\PPLCNetV3_x0_75_ocr_det
+[2026/05/29 17:15:55] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 1500 iterations
+[2026/05/29 17:16:08] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:16:19] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:16:30] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:16:41] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:16:44] ppocr INFO: epoch: [5/50], global_step: 100, lr: 0.000998, loss: 6.636528, loss_shrink_maps: 4.625113, loss_threshold_maps: 1.122188, loss_binary_maps: 0.885831, loss_cbn: 0.000000, avg_reader_cost: 0.02367 s, avg_batch_cost: 0.48030 s, avg_samples: 8.0, ips: 16.65614 samples/s, eta: 0:09:10, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:16:53] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:17:04] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:17:15] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:17:26] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:17:30] ppocr INFO: epoch: [9/50], global_step: 200, lr: 0.000970, loss: 5.400328, loss_shrink_maps: 3.965238, loss_threshold_maps: 0.768449, loss_binary_maps: 0.662968, loss_cbn: 0.000000, avg_reader_cost: 0.02255 s, avg_batch_cost: 0.46914 s, avg_samples: 8.0, ips: 17.05255 samples/s, eta: 0:08:14, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:17:38] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:17:49] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:17:49] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\iter_epoch_10
+[2026/05/29 17:18:01] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:18:12] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:18:18] ppocr INFO: epoch: [13/50], global_step: 300, lr: 0.000912, loss: 3.804469, loss_shrink_maps: 2.802906, loss_threshold_maps: 0.534484, loss_binary_maps: 0.472566, loss_cbn: 0.000000, avg_reader_cost: 0.02284 s, avg_batch_cost: 0.46986 s, avg_samples: 8.0, ips: 17.02628 samples/s, eta: 0:07:23, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:18:23] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:18:34] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:18:46] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:18:57] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:19:05] ppocr INFO: epoch: [17/50], global_step: 400, lr: 0.000829, loss: 2.006278, loss_shrink_maps: 1.200252, loss_threshold_maps: 0.577281, loss_binary_maps: 0.217335, loss_cbn: 0.000000, avg_reader_cost: 0.02162 s, avg_batch_cost: 0.47303 s, avg_samples: 8.0, ips: 16.91226 samples/s, eta: 0:06:34, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:19:09] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:19:20] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:19:31] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:19:43] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:19:43] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\iter_epoch_20
+[2026/05/29 17:19:53] ppocr INFO: epoch: [21/50], global_step: 500, lr: 0.000725, loss: 1.887507, loss_shrink_maps: 1.131581, loss_threshold_maps: 0.524299, loss_binary_maps: 0.209583, loss_cbn: 0.000000, avg_reader_cost: 0.03062 s, avg_batch_cost: 0.47906 s, avg_samples: 8.0, ips: 16.69954 samples/s, eta: 0:05:46, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:19:55] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:20:06] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:20:17] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:20:28] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:20:40] ppocr INFO: epoch: [25/50], global_step: 600, lr: 0.000607, loss: 1.390010, loss_shrink_maps: 0.802950, loss_threshold_maps: 0.438671, loss_binary_maps: 0.149259, loss_cbn: 0.000000, avg_reader_cost: 0.02015 s, avg_batch_cost: 0.46771 s, avg_samples: 8.0, ips: 17.10450 samples/s, eta: 0:04:56, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:20:40] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:20:51] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:21:02] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:21:14] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:21:25] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:21:27] ppocr INFO: epoch: [30/50], global_step: 700, lr: 0.000482, loss: 1.556269, loss_shrink_maps: 0.926921, loss_threshold_maps: 0.474410, loss_binary_maps: 0.178446, loss_cbn: 0.000000, avg_reader_cost: 0.02905 s, avg_batch_cost: 0.47821 s, avg_samples: 8.0, ips: 16.72902 samples/s, eta: 0:04:06, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:21:37] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:21:37] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\iter_epoch_30
+[2026/05/29 17:21:49] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:22:00] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:22:12] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:22:16] ppocr INFO: epoch: [34/50], global_step: 800, lr: 0.000358, loss: 1.371937, loss_shrink_maps: 0.806503, loss_threshold_maps: 0.420029, loss_binary_maps: 0.154837, loss_cbn: 0.000000, avg_reader_cost: 0.02199 s, avg_batch_cost: 0.47993 s, avg_samples: 8.0, ips: 16.66892 samples/s, eta: 0:03:17, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:22:23] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:22:34] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:22:45] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:22:57] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:23:02] ppocr INFO: epoch: [38/50], global_step: 900, lr: 0.000243, loss: 1.195664, loss_shrink_maps: 0.677073, loss_threshold_maps: 0.377898, loss_binary_maps: 0.128504, loss_cbn: 0.000000, avg_reader_cost: 0.02042 s, avg_batch_cost: 0.46821 s, avg_samples: 8.0, ips: 17.08642 samples/s, eta: 0:02:28, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:23:08] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:23:19] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:23:31] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:23:31] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\iter_epoch_40
+[2026/05/29 17:23:42] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:23:49] ppocr INFO: epoch: [42/50], global_step: 1000, lr: 0.000145, loss: 1.151374, loss_shrink_maps: 0.665852, loss_threshold_maps: 0.359875, loss_binary_maps: 0.126865, loss_cbn: 0.000000, avg_reader_cost: 0.02239 s, avg_batch_cost: 0.47004 s, avg_samples: 8.0, ips: 17.01977 samples/s, eta: 0:01:38, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:23:53] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:24:04] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:24:16] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:24:27] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:24:36] ppocr INFO: epoch: [46/50], global_step: 1100, lr: 0.000068, loss: 0.997939, loss_shrink_maps: 0.549001, loss_threshold_maps: 0.323592, loss_binary_maps: 0.103570, loss_cbn: 0.000000, avg_reader_cost: 0.02039 s, avg_batch_cost: 0.46488 s, avg_samples: 8.0, ips: 17.20862 samples/s, eta: 0:00:49, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:24:38] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:24:49] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:25:00] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:25:12] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:25:23] ppocr INFO: epoch: [50/50], global_step: 1200, lr: 0.000019, loss: 1.200346, loss_shrink_maps: 0.673775, loss_threshold_maps: 0.356258, loss_binary_maps: 0.129252, loss_cbn: 0.000000, avg_reader_cost: 0.01989 s, avg_batch_cost: 0.46714 s, avg_samples: 8.0, ips: 17.12566 samples/s, eta: 0:00:00, max_mem_reserved: 5782 MB, max_mem_allocated: 5325 MB
+[2026/05/29 17:25:23] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\latest
+[2026/05/29 17:25:23] ppocr INFO: save model in ./output/PP-OCRv4_mobile_det\iter_epoch_50
+[2026/05/29 17:25:23] ppocr INFO: best metric, hmean: 0, is_float16: False

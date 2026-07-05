@@ -1,0 +1,59 @@
+# ============================================================
+# PaddleOCR 身份证检测模型 - 环境依赖清单
+# ============================================================
+# 使用方法 (Linux / macOS):
+#   conda create -n mchlrn python=3.10 -y
+#   conda activate mchlrn
+#   pip install -r requirements.txt
+#   conda install -c conda-forge cudnn=9.2 -y   # (GPU 版本需额外安装 cuDNN)
+#
+# 使用方法 (Windows):
+#   conda create -n mchlrn python=3.10 -y
+#   conda activate mchlrn
+#   pip install -r requirements.txt
+#   conda install -c conda-forge cudnn=9.2 -y   # (GPU 版本需额外安装 cuDNN)
+# ============================================================
+
+# ----- PaddlePaddle 核心框架 -----
+# 请根据系统和 CUDA 版本选择合适的版本：
+#   Linux CUDA 11.8   → paddlepaddle-gpu==2.6.2
+#   Linux CUDA 12.x   → paddlepaddle-gpu==2.6.2 (post120)
+#   Windows CUDA 11.8 → paddlepaddle-gpu==2.6.2
+#   Windows CUDA 12.x → 不支持 GPU，请改用 CPU 版 paddlepaddle==2.6.2
+#   无 GPU (CPU 版)   → paddlepaddle==2.6.2
+# 官方安装指引: https://www.paddlepaddle.org.cn/install/quick
+paddlepaddle-gpu==2.6.2
+
+# ----- PaddleOCR（OCR 工具库）-----
+paddleocr>=2.8.0
+
+# ----- PaddleX（PaddlePaddle 生态工具）-----
+paddlex>=3.0.0
+
+# ----- OpenCV（图像处理）-----
+# opencv-python 提供核心 cv2 接口
+opencv-python>=4.8.0
+# opencv-contrib-python-headless 提供额外 contrib 模块（无 GUI 依赖，适合服务器）
+opencv-contrib-python-headless>=4.10.0
+
+# ----- Pillow（图片读写）-----
+Pillow>=10.0.0
+
+# ----- 文本相似度/后处理依赖 -----
+rapidfuzz>=3.0.0
+
+# ----- 文本向量化工具（用于训练数据增强）-----
+# fasttext>=0.9.0  # 仅 SEED 英文识别模型需要，本项目不需安装
+
+# ----- 图像处理与科学计算依赖 -----
+numpy>=1.21.0
+scipy>=1.7.0
+scikit-image>=0.19.0
+scikit-learn>=1.0.0
+imgaug>=0.4.0
+
+# ----- 工具库 -----
+shapely>=1.8.0      # 几何计算（Polygon 等）
+tqdm>=4.60.0        # 进度条
+PyYAML>=5.4.0       # YAML 配置文件解析
+lmdb>=1.3.0         # LMDB 数据库（PaddleOCR 训练数据缓存用）
